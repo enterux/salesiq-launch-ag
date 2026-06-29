@@ -1,0 +1,12 @@
+services:
+  salesiq-launch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: salesiq-launch:latest
+    container_name: salesiq-launch
+    ports:
+      - "3060:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
